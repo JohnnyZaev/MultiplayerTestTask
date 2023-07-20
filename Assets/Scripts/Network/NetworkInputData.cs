@@ -5,6 +5,7 @@ namespace Network
 {
     public struct NetworkInputData : INetworkInput
     {
-        public Vector2 Direction;
+        public Vector2 MoveDirection;
+        public Vector2 RotationDirection;
     }
 }

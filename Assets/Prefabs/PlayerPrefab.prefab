@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1052945553
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 87485fe9897b343c8b23391c6d1af97c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 7669375542549231912}
   - component: {fileID: 7669375542549231913}
   - component: {fileID: 7669375542549231910}
+  - component: {fileID: 7678706909329844457}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -143,7 +144,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7669375542549231914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   speed: 4
+  rotationSpeed: 0.15
 --- !u!114 &7669375542549231912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +271,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 7187564d-cc39-4268-a38b-bf27671a1eab
     m_ActionName: Player/Shoot
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7669375542549231912}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnRotate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 56a27533-fb28-4b7f-b81d-5f3327c55619
+    m_ActionName: Player/Rotate
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -287,3 +305,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
+--- !u!58 &7678706909329844457
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669375542549231918}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.23185968, y: -0.072456}
+  serializedVersion: 2
+  m_Radius: 0.33093596
