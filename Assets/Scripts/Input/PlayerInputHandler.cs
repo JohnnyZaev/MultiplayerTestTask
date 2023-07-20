@@ -1,13 +1,8 @@
-using Fusion;
+using Network;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public struct NetworkInputData : INetworkInput
-{
-	public Vector2 direction;
-}
-
-public class InputHandler : MonoBehaviour
+public class PlayerInputHandler : MonoBehaviour
 {
 	private Vector2 _inputVector;
 
@@ -19,7 +14,7 @@ public class InputHandler : MonoBehaviour
 	public NetworkInputData GetNetworkInput()
 	{
 		NetworkInputData networkInputData = new NetworkInputData();
-		networkInputData.direction = _inputVector;
+		networkInputData.Direction = _inputVector;
 
 		return networkInputData;
 	}
