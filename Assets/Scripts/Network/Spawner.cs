@@ -12,7 +12,13 @@ namespace Network
 		public NetworkPlayer networkPlayerPrefab;
 
 		private PlayerInputHandler _playerInputHandler;
-		
+		private MainMenuUIHandler _mainMenuUIHandler;
+
+		private void Awake()
+		{
+			_mainMenuUIHandler = FindObjectOfType<MainMenuUIHandler>(true);
+		}
+
 		public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
 		{
 			if (runner.IsServer)
@@ -78,6 +84,21 @@ namespace Network
 
 		public void OnSessionListUpdated(NetworkRunner runner, List<SessionInfo> sessionList)
 		{
+			if (_mainMenuUIHandler == null)
+				return;
+
+			if (sessionList.Count == 0)
+			{
+				_mainMenuUIHandler.SessionInfos.Clear();
+			}
+			else
+			{
+				foreach (var session in sessionList)
+				{
+					_mainMenuUIHandler.SessionInfos.Add(session);
+				}
+			}
+
 		}
 
 		public void OnCustomAuthenticationResponse(NetworkRunner runner, Dictionary<string, object> data)
