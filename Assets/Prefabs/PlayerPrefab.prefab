@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 2
+  bulletPrefab: {fileID: 2479216338956974877, guid: 948ab2c7e02be4d42b2cd9bd9d90c97c, type: 3}
   playerAnimator: {fileID: 552921411039013906}
   collisionLayers:
     serializedVersion: 2
