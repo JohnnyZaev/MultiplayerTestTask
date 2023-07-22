@@ -6,7 +6,7 @@ namespace Utils
     {
         public static Vector3 GetRandomSpawnPoint()
         {
-            return new Vector3(Random.Range(-9, 9), Random.Range(-3, 3), 0);
+            return new Vector3(Random.Range(-9, 10), Random.Range(-2, 3), 0);
         }
     }
 }

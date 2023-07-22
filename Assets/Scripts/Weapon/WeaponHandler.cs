@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Fusion;
 using Network;
@@ -30,7 +29,7 @@ public class WeaponHandler : NetworkBehaviour
 
 		StartCoroutine(StartFireAnimation());
 		Runner.LagCompensation.Raycast(transform.position, transform.right, 100, Object.InputAuthority, out var hitInfo,
-			collisionLayers, HitOptions.IncludePhysX);
+			collisionLayers, HitOptions.IgnoreInputAuthority);
 
 		float hitDistance = 100f;
 		bool isHitOtherPlayer = false;
